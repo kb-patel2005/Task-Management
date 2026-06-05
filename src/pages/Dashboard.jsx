@@ -44,7 +44,8 @@ export default function Dashboard() {
 
   const createTask = async (taskData) => {
     try {
-      await API.post("/tasks", taskData);
+      const task = await API.post("/tasks", taskData);
+      setTasks([...tasks,task.data]);
       getTasks(page);
     } catch (error) {
       console.log(error);
