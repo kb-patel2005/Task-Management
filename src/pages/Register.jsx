@@ -18,14 +18,18 @@ export default function Register() {
   const handleSubmit = async (e) => {
 
     e.preventDefault();
+    try {
+      const res = await API.post(
+        "/auth/register",
+        form
+      );
 
-    await API.post(
-      "/auth/register",
-      form
-    );
+      context.setUserData(res.data.user);
+      navigate("/dashboard");
+    } catch (error) {
+      alert("something went wrong sorry not able to signup now.")
+    }
 
-    context.setUserData(res.data.user);
-    navigate("/dashboard");
   };
 
   return (
