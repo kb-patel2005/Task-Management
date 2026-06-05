@@ -10,13 +10,14 @@ export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [search, setSearch] = useState("");
   const { loggedUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [editingTask, setEditingTask] = useState(null);
 
-  const getTasks = async (pageNum = 1) => {
+  const getTasks = async (pageNum = 1, searchTerm = search) => {
     try {
-      const res = await API.get(`/tasks?page=${pageNum}&limit=6`);
+      const res = await API.get(`/tasks?page=${pageNum}&limit=6&search=${searchTerm}`);
       setTasks(res.data.data);
       setPage(res.data.page);
       setTotalPages(res.data.totalPages);
@@ -33,6 +34,12 @@ export default function Dashboard() {
       navigate("/");
     }
   }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setPage(1);
+    getTasks(1, search);
+  };
 
   const createTask = async (taskData) => {
     try {
@@ -95,10 +102,27 @@ export default function Dashboard() {
               </span>
             </div>
 
+            {/* Search Bar */}
+            <form onSubmit={handleSearch} className="mb-6 flex space-x-2">
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search tasks..."
+                className="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+              <button
+                type="submit"
+                className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700"
+              >
+                Search
+              </button>
+            </form>
+
             {tasks.length === 0 ? (
               <div className="bg-white rounded-3xl p-10 text-center shadow-md">
                 <h2 className="text-2xl font-bold text-slate-700">No Tasks Found</h2>
-                <p className="mt-2 text-slate-500">Create your first task.</p>
+                <p className="mt-2 text-slate-500">Try adjusting your search or create a new task.</p>
               </div>
             ) : (
               <>
