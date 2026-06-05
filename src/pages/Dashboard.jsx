@@ -84,7 +84,6 @@ export default function Dashboard() {
     <div className="min-h-screen bg-purple-50">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Form Section */}
           <div className="lg:col-span-1">
             <TaskForm
               task={editingTask}
@@ -93,7 +92,6 @@ export default function Dashboard() {
             />
           </div>
 
-          {/* Tasks Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center justify-between mb-6">
               <h1 className="text-3xl font-bold text-purple-700">Your Tasks</h1>
@@ -102,7 +100,6 @@ export default function Dashboard() {
               </span>
             </div>
 
-            {/* Search Bar */}
             <form onSubmit={handleSearch} className="mb-6 flex space-x-2">
               <input
                 type="text"
@@ -138,7 +135,6 @@ export default function Dashboard() {
                   ))}
                 </div>
 
-                {/* Pagination Controls */}
                 <div className="flex justify-center mt-6 space-x-2">
                   <button
                     disabled={page === 1}
