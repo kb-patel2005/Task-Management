@@ -17,10 +17,13 @@ export default function Dashboard() {
 
   const getTasks = async (pageNum = 1, searchTerm = search) => {
     try {
-      const res = await API.get(`/tasks?page=${pageNum}&limit=6&search=${searchTerm}`);
-      setTasks(res.data.data);
-      setPage(res.data.page);
-      setTotalPages(res.data.totalPages);
+      // ✅ updated endpoint to match backend: /tasks/user
+      const res = await API.get(`/tasks/user?page=${pageNum}&limit=6&search=${searchTerm}`);
+
+      // ✅ backend returns { tasks, currentPage, totalPages }
+      setTasks(res.data.tasks || []);
+      setPage(res.data.currentPage || 1);
+      setTotalPages(res.data.totalPages || 1);
     } catch (error) {
       console.log(error);
     }
