@@ -25,6 +25,7 @@ export default function Register() {
       );
 
       context.setUserData(res.data.user);
+      localStorage.setItem("token",res.data.token);
       navigate("/dashboard");
     } catch (error) {
       alert("something went wrong sorry not able to signup now.")
