@@ -21,7 +21,16 @@ A modern, responsive task management application built with **React**, **Vite**,
 - **Routing**: React Router DOM 7.16.0
 - **Code Quality**: ESLint with React hooks support
 
-## 🚀 Getting Started
+## � Clone Repository
+
+To clone this repository, use the following command:
+
+```bash
+git clone https://github.com/kb-patel2005/Task-Management.git
+cd Task-Management
+```
+
+## �🚀 Getting Started
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -29,10 +38,9 @@ A modern, responsive task management application built with **React**, **Vite**,
 
 ### Installation
 
-1. **Clone the repository**
+1. **Navigate to the project directory** (after cloning from the repository link above)
    ```bash
-   git clone <repository-url>
-   cd task-management
+   cd Task-Management
    ```
 
 2. **Install dependencies**
