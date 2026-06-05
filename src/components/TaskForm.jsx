@@ -31,11 +31,7 @@ export default function TaskForm({
 
     e.preventDefault();
 
-    onSubmit({
-      title,
-      description,
-      status
-    });
+    onSubmit({title, description, status});
   };
 
   return (

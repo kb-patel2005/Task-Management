@@ -33,7 +33,6 @@ export default function Register() {
     <div
       className="min-h-screen flex items-center justify-center px-4"
     >
-
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-white p-8 rounded-3xl shadow-2xl"
@@ -107,12 +106,8 @@ export default function Register() {
               Login
             </Link>
           </div>
-          
-
         </div>
-
       </form>
-
     </div>
   );
 }

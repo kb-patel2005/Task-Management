@@ -40,7 +40,6 @@ export default function Login() {
         }}
         className="w-full max-w-md backdrop-blur-lg p-10 rounded-3xl shadow-2xl border border-purple-100"
       >
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-extrabold mb-2 text-purple-700 tracking-wide">
             🔑 Login

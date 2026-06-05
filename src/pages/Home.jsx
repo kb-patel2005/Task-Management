@@ -8,7 +8,6 @@ export default function Home() {
     <div className="min-h-screen flex items-center justify-center  px-6">
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         
-        {/* Left side: Heading + Paragraph */}
         <div className="text-left space-y-6">
           <h1 className="sm:text-5xl text-3xl font-extrabold text-purple-800">
             Manage Your Tasks Effortlessly
@@ -26,7 +25,6 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Right side: Image */}
         <div className="flex justify-center">
           <img
             src="https://img.freepik.com/free-vector/task-management-concept-illustration_114360-1085.jpg"

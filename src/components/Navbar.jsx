@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <nav className="bg-purple-700 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+        
         <h1
           className="text-2xl font-bold cursor-pointer"
           onClick={() => navigate("/")}
@@ -29,7 +29,6 @@ export default function Navbar() {
           />
         </h1>
 
-        {/* Desktop menu */}
         <div className="hidden md:flex space-x-6 items-center">
           <Link to="/dashboard" className="hover:text-purple-300 transition flex items-center">
             <div className="text-xl">🧾</div>
@@ -77,7 +76,6 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile hamburger */}
         <div className="md:hidden">
           <button
             onClick={() => setOpen(!open)}

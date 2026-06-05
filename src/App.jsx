@@ -13,8 +13,8 @@ export default function App() {
   return (<>
 
     <BrowserRouter>
-    <UserProvider>
-      <Navbar />
+      <UserProvider>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
 
